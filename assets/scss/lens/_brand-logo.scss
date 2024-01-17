@@ -1,0 +1,52 @@
+/*
+-----------------------------------------------------------------------
+  Brand Logo CSS
+-----------------------------------------------------------------------
+*/
+
+.brand-logo-area {
+  padding: 163px 0 174px;
+  @media #{$lg-device} {
+    padding: 95px 0 90px;
+  }
+  @media #{$sm-device} {
+    padding: 75px 0 70px;
+  }
+  .title {
+    margin-bottom: 40px;
+    @media #{$lg-device} {
+      margin-bottom: 15px;
+    }
+  }
+  p {
+    font-size: 18px;
+    letter-spacing: 0;
+    margin-bottom: 130px;
+    @media #{$lg-device} {
+      font-size: 16px;
+      margin-bottom: 65px;
+    }
+    @media #{$xxs-device} {
+      font-size: 13px;
+    }
+  }
+}
+
+.brand-logo-item {
+  img {
+    opacity: .5;
+    @include transition(.3s);
+  }
+  &:hover {
+    img {
+      opacity: 1;
+    }
+  }
+}
+
+.brand-logo-slider-container {
+  .brand-logo-slider {
+    .brand-logo-item {
+    }
+  }
+}

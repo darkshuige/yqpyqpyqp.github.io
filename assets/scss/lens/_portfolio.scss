@@ -1,0 +1,580 @@
+/*
+-----------------------------------------------------------------------
+	Portfolio CSS
+-----------------------------------------------------------------------
+*/
+.portfolio-area {
+	&.portfolio-default-area {
+		padding: 100px 0 159px;
+		@media #{$lg-device} {
+			padding: 83px 0 110px;
+		}
+		@media #{$md-device} {
+			padding: 43px 0 100px;
+		}
+		@media #{$sm-device} {
+			padding: 60px 0 70px;
+		}
+		@media #{$xs-device} {
+			padding: 60px 0;
+		}
+		.container-fluid {
+			padding: 0 87px;
+			@media #{$xxl-device} {
+				padding: 0 22px;
+			}
+		}
+		.widget-instagram-area {
+			margin-top: 115px;
+			@media #{$md-device} {
+				margin-top: 100px;
+			}
+			@media #{$xs-device} {
+				margin-top: 85px;
+			}
+		}
+	}
+}
+
+.portfolio-item {
+	position: relative;
+	.thumb {
+		clip-path: inset(0 0 0 0);
+		overflow: hidden;
+		@include transition(.8s);
+		img {
+			@include transition(.8s);
+		}
+	}
+	.content {
+		margin-top: 30px;
+		text-align: center;
+		@media #{$md-device} {
+			margin-top: 20px;
+		}
+		.category {
+			color: $black-999;
+			letter-spacing: .75px;
+			margin-bottom: 9px;
+			text-transform: uppercase;
+			@media #{$md-device} {
+				font-size: 12px;
+				margin-bottom: 5px;
+			}
+		}
+		.title {
+			display: inline-block;
+			font-size: 30px;
+			letter-spacing: -.25px;
+			line-height: 1;
+			margin-bottom: 0;
+			position: relative;
+			@include transition(.3s);
+			@media #{$lg-device} {
+				font-size: 24px;
+			}
+			@media #{$md-device} {
+				font-size: 18px;
+			}
+			&:after {
+				background-color: #535353;
+				bottom: -1px;
+				content: "";
+				height: 2px;
+				right: 0;
+				position: absolute;
+				width: 0;
+				@include transition(.3s);
+				@media #{$md-device} {
+					height: 1px;
+				}
+			}
+			&:hover {
+				&:after {
+					left: 0;
+					width: 100%;
+				}
+			}
+			a {
+				color: $black;
+			}
+		}
+	}
+	&:hover {
+		.thumb  {
+			clip-path: inset(12px 12px 12px 12px);
+			img {
+				@include scale(1.05);
+			}
+		}
+		.content {
+			.title {}
+		}
+	}
+}
+
+.portfolio-list {
+	align-items: stretch;
+	display: flex;
+	.portfolio-item {
+		align-items: center;
+		display: flex;
+		justify-content: center;
+		padding: 54.5px 7.5px;
+		position: relative;
+		@include transition(.3s);
+		@media #{$lg-device} {
+			padding: 44.5px 7.5px;
+		}
+		@media #{$md-device} {
+			padding: 34.5px 7.5px;
+		}
+		@media #{$sm-device} {
+			padding: 20px 7.5px;
+		}
+		@media #{$xs-device} {
+			padding: 0 7.5px 35px;
+		}
+	}
+}
+
+.btn-portfolio {
+	border: 1px solid #bcbcbc;
+  border-radius: 50%;
+  color: $black;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: $font-weight-bold;
+  height: 170px;
+  letter-spacing: 0.25px;
+  line-height: 25px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 170px;
+  padding: 59px 22px;
+  &:hover {
+	background-color: $black;
+	border-color: $black;
+	color: $white;
+  }
+}
+
+.widget-instagram-area {
+	color: $black;
+	display: inline-flex;
+  flex-direction: column;
+	font-family: $font-current-theme2;
+	font-size: 30px;
+	line-height: 48px;
+	letter-spacing: -.1px;
+  text-align: center;
+  @include transition(.3s);
+  @media #{$sm-device} {
+	font-size: 24px;
+  }
+  @media #{$xs-device} {
+	font-size: 18px;
+  }
+	i {
+		color: $black;
+		font-size: 48px;
+		margin-bottom: 21px;
+	}
+	label {
+		position: relative;
+		&:after {
+			background-color: #535353;
+	    bottom: 7px;
+	    content: "";
+	    height: 2px;
+	    right: 0;
+	    position: absolute;
+	    width: 0;
+	    @include transition(.3s);
+	    @media #{$sm-device} {
+	    	bottom: 8px;
+	    	height: 1px;
+	    }
+	    @media #{$xs-device} {
+	    	bottom: 11px;
+	    }
+		}
+	}
+	span {
+		color: $black-999;
+		font-family: $font-current-theme1;
+		font-size: 18px;
+		letter-spacing: 0;
+	}
+	&:hover, &:focus {
+		color: $black;
+		label {
+			&:after {
+				left: 0;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.portfolio-single {
+	padding: 118px 0 143px;
+	@media #{$lg-device} {
+		padding: 95px 0 85px;
+	}
+	@media #{$sm-device} {
+		padding: 75px 0;
+	}
+	@media #{$xxs-device} {
+		padding: 75px 0 65px;
+	}
+	.inner-content {
+		.content {
+			margin-bottom: 124px;
+			text-align: center;
+			@media #{$lg-device} {
+				margin-bottom: 100px;
+			}
+			@media #{$sm-device} {
+				margin-bottom: 80px;
+			}
+			.category {
+				color: $black-999;
+				font-size: 18px;
+				letter-spacing: 2px;
+				margin-bottom: 34px;
+				text-transform: uppercase;
+				@media #{$lg-device} {
+					margin-bottom: 25px;
+				}
+				@media #{$md-device} {
+					font-size: 16px;
+					margin-bottom: 18px;
+				}
+				@media #{$sm-device} {
+					font-size: 14px;
+					margin-bottom: 12px;
+				}
+			}
+			.title {
+				font-size: 60px;
+				line-height: 1;
+				letter-spacing: -.25px;
+				@media #{$lg-device} {
+					font-size: 48px;
+				}
+				@media #{$md-device} {
+					font-size: 36px;
+				}
+				@media #{$sm-device} {
+					font-size: 30px;
+				}
+			}
+		}
+		.portfolio-info {
+			border-bottom: 1px solid #e7e7e7;
+		margin-bottom: 83px;
+		padding-bottom: 73px;
+		@media #{$sm-device} {
+			margin-bottom: 50px;
+			padding-bottom: 20px;
+		}
+		@media #{$xs-device} {
+			padding: 0 50px 20px;
+		}
+		@media #{$xxs-device} {
+			padding: 0 15px 20px;
+		}
+			.info-item {
+				color: $black;
+				font-family: $font-current-theme2;
+				font-size: 18px;
+				letter-spacing: -.25px;
+				@media #{$md-device} {
+					font-size: 14px;
+					br {
+						display: none;
+					}
+				}
+				@media #{$sm-device} {
+					margin-bottom: 40px;
+				}
+				@media #{$xs-device} {
+					font-size: 16px;
+				}
+				span {
+					color: $black-999;
+					display: block;
+					font-family: $font-current-theme1;
+					letter-spacing: .5px;
+					line-height: 1;
+					margin-bottom: 24px;
+					text-transform: uppercase;                  
+					@media #{$sm-device} {
+						margin-bottom: 15px;
+					}
+				}
+				&.style-two {
+					line-height: 48px;
+					margin-top: -9px;                   
+					@media #{$lg-device} {
+						br {
+							display: none;
+						}
+					}
+					@media #{$md-device} {
+						line-height: $body-line-height;
+						margin-top: 0;
+					}
+					span {
+						position: relative;
+						top: 9px;
+						@media #{$md-device} {
+							top: 0;
+						}
+					}
+				}
+			}
+		}
+		.portfolio-content {
+			font-size: 18px;
+			line-height: 30px;
+			letter-spacing: -.15px;
+			margin: 0 auto 104px;
+			max-width: 870px;
+			text-align: center;
+			@media #{$lg-device} {
+				margin: 0 auto 85px;
+			}
+			@media #{$sm-device} {
+				margin: 0 auto 55px;
+			}
+			p {
+				margin-bottom: 0;
+			}
+			a {
+				color: $theme-color;
+				text-decoration: underline;
+			}
+		}
+	}
+	.thumb {
+		&.style-two {
+			align-items: center;
+			padding-left: 200px;
+			@media #{$lg-device} {
+				padding-left: 100px;
+			}
+			@media #{$md-device} {
+				padding-left: 80px;
+			}
+			@media #{$sm-device} {
+				padding: 0 75px;
+			}
+			@media #{$xs-device} {
+				padding: 0 15px;
+			}
+			@media #{$xxs-device} {
+				padding: 0 10px;
+			}
+			img {
+				&:last-child {
+					padding-right: 0;
+				}
+			}
+		}
+	}
+	.social-icons {
+		margin:173px 0 123px;
+		text-align: center;
+		@media #{$lg-device} {
+			margin: 100px 0;
+		}
+		@media #{$xs-device} {
+			margin: 60px 0;
+		}
+		span {
+			color: $black;
+			font-family: $font-current-theme2;
+			font-weight: $font-weight-bold;
+			letter-spacing: .15px;
+			margin-right: 22px;
+		}
+		a {
+			color: $black-999;
+			font-size: 18px;
+			margin-right: 13px;
+			&:last-child {
+				margin-right: 0;
+			}
+			.icofont-google-plus {
+				font-size: 27px;
+				position: relative;
+				top: 3px;
+			}
+			&:hover {
+				color: $black;
+			}
+		}
+	}
+	.btn-started {
+		border: 1px solid $gray-ccc;
+	  border-radius: 50%;
+	  color: $black;
+	  display: inline-block;
+	  font-size: 14px;
+	  font-weight: $font-weight-bold;
+	  height: 300px;
+	  letter-spacing: 0.25px;
+	  line-height: 24px;
+	  margin-bottom: 141px;
+	  padding: 70px 55px;
+	  text-align: center;
+	  text-transform: uppercase;
+	  width: 300px;
+	  @include transition(.3s);
+	  @media #{$lg-device} {
+		margin-bottom: 105px;
+	  }
+	  @media #{$xs-device} {
+		font-size: 11px;
+		height: 200px;
+		line-height: 20px;
+		margin-bottom: 70px;
+		padding: 45px 30px;
+		width: 200px;
+	  }
+	  span {
+		color: $theme-color6;
+		display: block;
+		font-family: $font-current-theme2;
+		font-size: 30px;
+		font-weight: $font-weight-normal;
+		letter-spacing: 0;
+		line-height: 1;
+		margin: 23px 0 31px;
+		text-transform: capitalize;
+		@include transition(.3s);
+		  @media #{$xs-device} {
+			font-size: 18px;
+			margin: 15px 0;
+		  }
+	  }
+	  i {
+		color: $black;
+		font-size: 36px;
+		@include transition(.3s);
+		@media #{$xs-device} {
+			font-size: 24px;
+		}
+	  }
+	  &:hover {
+			color: $black;
+			span {
+				color: $black;
+			}
+			i {
+				color: $black;
+			}
+	  }
+	}
+	.portfolio-navigation {
+		border-top: 1px solid #e7e7e7;
+		padding-top: 64px;
+	}
+}
+
+.portfolio-navigation {
+	display: flex;
+	justify-content: space-between;
+	.prev, .next {
+		color: $black;
+		font-size: 16px;
+		font-weight: $font-weight-bold;
+		letter-spacing: 0;
+		@media #{$xxs-device} {
+			font-size: 14px;
+		}
+		a {
+			align-items: center;
+			color: $black-999;
+			display: flex;
+			font-size: 24px;
+			font-weight: $font-weight-normal;
+			letter-spacing: .25px;
+			margin-bottom: 5px;
+			margin-left: -10px;
+			@media #{$md-device} {
+				font-size: 20px;
+				margin-bottom: 0;
+			}
+			@media #{$xxs-device} {
+				font-size: 16px;
+			}
+			i {
+				font-size: 40px;
+				@media #{$md-device} {
+					font-size: 32px;
+				}
+				@media #{$xxs-device} {
+					font-size: 24px;
+				}
+			}
+			&:hover {
+				color: $black;
+			}
+		}
+	}
+	.next {
+		text-align: right;
+		a {
+			justify-content: flex-end;
+			margin-right: -8px;
+		}
+	}
+}
+
+.portfolio-filter-menu {
+	margin-bottom: 63px;
+	@media #{$lg-device} {
+		margin-bottom: 50px;
+	}
+	@media #{$md-device} {
+		margin-bottom: 35px;
+	}
+	button {
+		background-color: transparent;
+		border: none;
+		box-shadow: none;
+		color: $black;
+		font-size: 16px;
+		letter-spacing: 0;
+		line-height: 1.1;
+		margin-right: 38.74px;
+		padding: 0;
+		position: relative;
+		@include transition(.3s);
+		@media #{$sm-device} {
+			margin-right: 25px;
+		}
+		&:last-child {
+			margin-right: 0;
+		}
+		&:after {
+			background-color: #535353;
+			bottom: 0;
+			content: "";
+			height: 1px;
+			position: absolute;
+			right: 0;
+			width: 0;
+			@include transition(.3s);
+		}
+		&.active, &:hover {
+			&:after {
+				left: 0;
+				width: 100%;
+			}
+		}
+	}
+}
