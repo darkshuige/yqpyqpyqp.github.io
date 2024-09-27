@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>Sierpinski Gasket</title>
+    <style>
+        body { font-family: Arial, sans-serif; }
+        canvas { border: 1px solid black; }
+        .controls { margin-bottom: 20px; }
+    </style>
+    <script id="vertex-shader-2d" type="x-shader/x-vertex">
+        attribute vec4 aVertexPosition;
+        void main() {
+            gl_Position = aVertexPosition;
+        }
+    </script>
+    <script id="fragment-shader-2d" type="x-shader/x-fragment">
+        precision mediump float;
+        void main() {
+            gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+        }
+    </script>
+    <script id="vertex-shader-3d" type="x-shader/x-vertex">
+        attribute vec3 aVertexPosition;
+        attribute vec3 aVertexColor;
+        varying vec4 vColor;
+        void main() {
+            gl_Position = vec4(aVertexPosition, 1.0);
+            vColor = vec4(aVertexColor, 1.0);
+        }
+    </script>
+    <script id="fragment-shader-3d" type="x-shader/x-fragment">
+        precision mediump float;
+        varying vec4 vColor;
+        void main() {
+            gl_FragColor = vColor;
+        }
+    </script>
+    <script src="../js/common/gl-matrix-min.js"></script>
+    <script src="../js/common/initShaders.js"></script>
+    <script src="../js/common/webgl-utils.js"></script>
+    <script src="../js/ch02/demo2.js"></script>
+</head>
+<body>
+    <a href="https://darkshuige.github.io/yqpyqpyqp.github.io/"><h1>我的个人网址</h1></a>
+    <div class="controls">
+        <button id="resetButton">重置</button>
+        <label for="subdivisionLevel">剖分层次 (0-7):</label>
+        <input type="range" id="subdivisionLevel" min="0" max="7" value="4">
+        <label for="rotationAngle">旋转角度 (0-360):</label>
+        <input type="range" id="rotationAngle" min="0" max="360" value="60">
+    </div>
+    <canvas id="gasketCanvas" width="512" height="512">你的浏览器不支持HTML5 canvas元素</canvas>
+    <div class="controls">
+        <label>选择形状:</label>
+        <input type="radio" name="shapeType" value="2d" checked> 2D
+        <input type="radio" name="shapeType" value="3d"> 3D
+        <input type="radio" name="shapeType" value="wireframe"> 线框
+        <button id="applyShapeButton">应用</button>
+    </div>
+    <div class="controls">
+        <label>旋转效果:</label>
+        <input type="radio" name="rotationEffect" value="none" checked> 关闭
+        <input type="radio" name="rotationEffect" value="taskD"> 任务d
+        <input type="radio" name="rotationEffect" value="taskE"> 任务e
+        <button id="applyRotationButton">应用旋转</button>
+    </div>
+</body>
+</html>
